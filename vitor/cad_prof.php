@@ -57,13 +57,14 @@ if(isset($_POST["submit"])){
 
 <h1 class="titulo">Cadastro de Professores</h1>
 <br>
-<form class="form" action="cad_prof.php" method="POST">
 
+
+
+<form class="form" action="cad_prof.php" method="POST">
+    <br><br>
 <div><label for="nome">Nome</label><br>
 <input type="text" name="nome" id="nome" value="nome">
 </div>
-
-
 <br><br>
 <label for="nivel">Nível</label><br>
 <input type="text" name="nivel" id="nivel" value="nivel">
