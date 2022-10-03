@@ -3,7 +3,7 @@
 session_start();
 include_once 'conexao.php';
 
-if(isset($_POST['submit'])and !empty($_POST['login'])and !empty($_POST['senha'])){
+if(isset($_POST['submit']) and !empty($_POST['login'])and !empty($_POST['senha'])){
 
   $login = $_POST['login'];
   $senha = $_POST['senha'];
@@ -12,19 +12,20 @@ if(isset($_POST['submit'])and !empty($_POST['login'])and !empty($_POST['senha'])
   $resultado = $conexao ->query($sql);
   $usuario = $resultado ->fetch_assoc();
 
-  if(password_verify($senha,$usuario['senha'])){
+    if(password_verify($senha,$usuario['senha'])){
 
-    $_SESSION['login'] = $login;
-    $_SESSION['senha'] = $senha;
-    header('Location:sistema.php');
-  }else{
-    header('Location:login.php');
-  }
+      $_SESSION['login'] = $login;
+      $_SESSION['senha'] = $senha;
+      header('Location:sistema.php');
+  
+    }else{
+    
+      header("Location:login.php?msg='Senha incorreta!!'");
+    }
+
 
 }else{
-  $msg = "Senha incorreta!!";
-  header('Location:login.php?msg="$msg"');
-
+  header('Location:login.php');
 }
 
 

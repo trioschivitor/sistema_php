@@ -3,10 +3,17 @@
 session_start();
 include_once 'conexao.php';
 
+if(!empty($_GET['search'])){
+
+  $search = $_GET['search'];
+  $sql = "SELECT * FROM professores WHERE nome LIKE '%$search%' ORDER BY nome ASC";
+
+}else{
 
 $sql="SELECT * FROM professores ORDER BY nome ASC";
-$resultado = $conexao->query($sql);
 
+}
+$resultado = $conexao->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -54,6 +61,12 @@ $resultado = $conexao->query($sql);
       color: white;
 
     }
+
+    .btn-search{
+      background: goldenrod;
+      border-radius: 5px;
+      grid-row: auto;
+    }
   </style>
 </head>
 
@@ -61,6 +74,12 @@ $resultado = $conexao->query($sql);
   <header class="navbar bg-dark navbar-dark topo">
     <a href="index.html"><img src="/vitor/imagens/icons8-hulk.svg" alt="home"></a>
     <h1>SISTEMA DE CADASTRO ESCOLAR - 2022 <br> </h1>
+
+    <form class="form-inline" action="lista_prof.php" method="$_GET">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+    <button class="btn-search" type="submit" name="submit">Search</button>
+  </form>
+
     <a href="sair.php"><button class="btn btn-danger">SAIR</button></a>
 
 

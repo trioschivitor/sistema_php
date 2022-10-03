@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +59,7 @@
 
   <main>
     <section class="box">
-    <form action="sistema.php" method="POST">
+    <form action="testlogin.php" method="POST">
   <div class="row mb-3">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Login</label>
     <div class="col-sm-10">
@@ -69,7 +72,17 @@
       <input type="password" class="form-control" id="inputEmail3" name="senha">
     </div>
   </div>
-    <a href="index.html"><button class="btn btn-warning" type="submit" name="entrar">Entrar</button></a>  
+    <button class="btn btn-warning" type="submit" name="submit" >Entrar</button>  
+
+    <?php
+
+if(isset($_GET["msg"])){
+  $mensagem = $_GET["msg"];
+  echo $mensagem;
+}
+
+?>
+
 </form>
     </section>
   </main>

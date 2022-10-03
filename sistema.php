@@ -45,7 +45,7 @@ $resultado = $conexao->query($sql);
     }
 
     body {
-      height: 100vh;
+      height: 120vh;
 
     }
 
@@ -63,6 +63,11 @@ $resultado = $conexao->query($sql);
       width: auto;
       display: flex;
       justify-content: space-around;
+      
+      
+    }
+
+    .table{
       color: white;
     }
 
@@ -84,7 +89,7 @@ $resultado = $conexao->query($sql);
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit">Search</button>
   </form>
 
-    <a href="sair.php"><button class="btn btn-danger">SAIR</button></a>
+    <a href="sair.php"><button class="btn btn-warning">SAIR</button></a>
 
 
 
@@ -93,7 +98,7 @@ $resultado = $conexao->query($sql);
   <main>
     <section class="box">
     <table class="table">
-  <thead class="thead-white">
+  <thead class="thead">
     <tr>
       <th scope="col">Nome</th>
       <th scope="col">Email</th>
@@ -102,6 +107,8 @@ $resultado = $conexao->query($sql);
       <th scope="col">Data de Nascimento</th>
       <th scope="col">Escolaridade</th>
       <th scope="col">Telefone</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -116,6 +123,9 @@ $resultado = $conexao->query($sql);
         echo "<td>".$alunos['data_nasc']."</td>";
         echo "<td>".$alunos['escolaridade']."</td>";
         echo "<td>".$alunos['telefone']."</td>";
+        echo "<td> <a class='btn btn-sm btn-warning'href='edit.php?id=$alunos[id]'><img src= '../vitor/imagens/lapis.svg'> "." </a></td>";
+        echo "<td> <a class='btn btn-sm btn-danger'href='delete.php?id=$alunos[id]'><img src='../vitor/imagens/trash-fill.svg'> "." </a></td>";
+        
         echo "</tr>";
 
       }

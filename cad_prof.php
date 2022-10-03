@@ -58,7 +58,7 @@ if(isset($_POST["submit"])){
 <h1 class="titulo">Cadastro de Professores</h1>
 <br>
 
-
+<a href="lista_prof.php"><button>Lista de Professores</button></a>
 
 <form class="form" action="cad_prof.php" method="POST">
     <br><br>
