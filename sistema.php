@@ -85,7 +85,7 @@ $resultado = $conexao->query($sql);
     ?></h1>
     
   <form class="form-inline" action="sistema.php" method="$_GET">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="Search">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit">Search</button>
   </form>
 

@@ -2,7 +2,7 @@
 
 session_start();
 session_destroy();
-header('Locaton:index.html');
+header('Location:index.html');
 
 
 ?>
